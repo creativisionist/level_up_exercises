@@ -1,7 +1,7 @@
 Feature: Code configurations
-  In order to activate the bomb
+  In order to configure the bomb
   As the evil Vault Boy
-  I want to input the correct activation code
+  I want to input activation and deactivation codes
 
   Scenario: Visit the bomb page
     When I am on the bomb page
