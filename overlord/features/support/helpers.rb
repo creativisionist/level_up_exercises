@@ -1,7 +1,7 @@
 module Helpers
-  def initialize_bomb(code_1, code_2)
-    fill_in 'activation_code', with: code_1
-    fill_in 'deactivation_code', with: code_2
+  def initialize_bomb(activation_code, deactivation_code)
+    fill_in 'activation_code', with: activation_code
+    fill_in 'deactivation_code', with: deactivation_code
     find("button[name='submit_button']").click
   end
 
