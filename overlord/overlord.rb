@@ -32,7 +32,7 @@ end
 
 get '/inactive_bomb' do
   return erb :inactive_bomb if bomb && bomb.inactive?
-  redirect '/reroute'
+  redirect new_route
 end
 
 post '/activate' do
@@ -47,7 +47,7 @@ end
 
 get '/active_bomb' do
   return erb :active_bomb if bomb && bomb.active?
-  redirect '/reroute'
+  redirect new_route
 end
 
 post '/deactivate' do
@@ -65,7 +65,7 @@ end
 
 get '/explosion' do
   return erb :explosion if bomb && bomb.exploded?
-  redirect '/reroute'
+  redirect new_route
 end
 
 not_found do
@@ -95,11 +95,11 @@ def empty?(code)
   code.empty?
 end
 
-get '/reroute' do
-  redirect '/bomb' if !bomb
-  redirect '/inactive_bomb' if bomb.inactive?
-  redirect '/active_bomb' if bomb.active?
-  redirect '/explosion' if bomb.exploded?
+def new_route
+  return '/bomb' if !bomb
+  return '/inactive_bomb' if bomb.inactive?
+  return '/active_bomb' if bomb.active?
+  return '/explosion' if bomb.exploded?
 end
 
 private
