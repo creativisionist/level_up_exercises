@@ -1,7 +1,7 @@
 Feature: Bomb deactivation
-  In order to deactivate the bomb
+  In order to save Megaton
   As the good Vault Boy
-  I want to input the correct deactivation code
+  I want to deactivate the bomb
 
   Scenario: Visit the active bomb page
     When I am on the active bomb page
