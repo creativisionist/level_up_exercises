@@ -19,7 +19,7 @@ post '/boot' do
   activation_code = params[:activation_code]
   deactivation_code = params[:deactivation_code]
   max_failed_deactivations = 3
-  errors = collect_errors(activation_code, deactivation_code)
+  errors = validate_codes(activation_code, deactivation_code)
 
   if errors.empty?
     create_bomb(activation_code, deactivation_code, max_failed_deactivations)
@@ -106,7 +106,7 @@ end
 
 private
 
-def collect_errors(activation_code, deactivation_code)
+def validate_codes(activation_code, deactivation_code)
   errors = {}
   if empty?(activation_code) || empty?(deactivation_code)
     errors[:blank_input] = "Input must not be blank."
