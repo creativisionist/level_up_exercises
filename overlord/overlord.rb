@@ -25,9 +25,7 @@ post '/boot' do
     create_bomb(activation_code, deactivation_code, max_failed_deactivations)
     redirect '/inactive_bomb'
   else
-    errors.map do |k, v|
-      flash[k] = v
-    end
+    errors.map { |k, v| flash[k] = v }
     redirect '/bomb'
   end
 end
