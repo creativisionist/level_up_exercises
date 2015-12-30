@@ -5,7 +5,7 @@ module Helpers
     find("button[name='submit_button']").click
   end
 
-  def validate_code(field_name, code)
+  def submit_and_validate_code(field_name, code)
     fill_in field_name, with: code
     find("button[name='submit_button']").click
   end

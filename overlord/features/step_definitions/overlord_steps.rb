@@ -66,7 +66,7 @@ end
 
 When(/^I input the correct activation code$/) do
   initialize_bomb(ACTIVATION_CODE, DEACTIVATION_CODE)
-  validate_code('activation_code', ACTIVATION_CODE)
+  submit_and_validate_code('activation_code', ACTIVATION_CODE)
 end
 
 Then(/^I should be directed to the active bomb page$/) do
@@ -87,7 +87,7 @@ end
 
 When(/^I input an incorrect activation code$/) do
   initialize_bomb(ACTIVATION_CODE, DEACTIVATION_CODE)
-  validate_code('activation_code', INVALID_CODE)
+  submit_and_validate_code('activation_code', INVALID_CODE)
 end
 
 Then(/the page should contain (.*)/) do |input|
@@ -97,21 +97,21 @@ end
 Given(/^I have successfully activated the bomb$/) do
   visit '/bomb'
   initialize_bomb(ACTIVATION_CODE, DEACTIVATION_CODE)
-  validate_code('activation_code', ACTIVATION_CODE)
+  submit_and_validate_code('activation_code', ACTIVATION_CODE)
 end
 
 When(/^I input the correct deactivation code$/) do
-  validate_code('deactivation_code', DEACTIVATION_CODE)
+  submit_and_validate_code('deactivation_code', DEACTIVATION_CODE)
 end
 
 When(/^I input an incorrect deactivation code$/) do
-  validate_code('deactivation_code', INVALID_CODE)
+  submit_and_validate_code('deactivation_code', INVALID_CODE)
 end
 
 When(/^I input an incorrect deactivation code max times$/) do
-  validate_code('deactivation_code', INVALID_CODE)
-  validate_code('deactivation_code', INVALID_CODE)
-  validate_code('deactivation_code', INVALID_CODE)
+  submit_and_validate_code('deactivation_code', INVALID_CODE)
+  submit_and_validate_code('deactivation_code', INVALID_CODE)
+  submit_and_validate_code('deactivation_code', INVALID_CODE)
 end
 
 Then(/^I should be directed to the explosion page$/) do
