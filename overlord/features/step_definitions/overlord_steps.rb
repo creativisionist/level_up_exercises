@@ -1,7 +1,7 @@
 ACTIVATION_CODE = 1234
 DEACTIVATION_CODE = 0000
 DUPLICATE_CODE = 1234
-INCORRECT_CODE = "asdf1234"
+INVALID_CODE = "asdf1234"
 BLANK_CODE = ""
 
 When(/^I am on the bomb page$/) do
@@ -21,15 +21,15 @@ When(/^I set valid activation and deactivation codes$/) do
 end
 
 When(/^I set an invalid activation code with a valid deactivation code$/) do
-  initialize_bomb(INCORRECT_CODE, DEACTIVATION_CODE)
+  initialize_bomb(INVALID_CODE, DEACTIVATION_CODE)
 end
 
 When(/^I set a valid activation code with an invalid deactivation code$/) do
-  initialize_bomb(ACTIVATION_CODE, INCORRECT_CODE)
+  initialize_bomb(ACTIVATION_CODE, INVALID_CODE)
 end
 
 When(/^I set invalid duplicate activation and deactivation codes$/) do
-  initialize_bomb(INCORRECT_CODE, INCORRECT_CODE)
+  initialize_bomb(INVALID_CODE, INVALID_CODE)
 end
 
 When(/^I set valid duplicate activation or deactivation codes$/) do
@@ -87,7 +87,7 @@ end
 
 When(/^I input an incorrect activation code$/) do
   initialize_bomb(ACTIVATION_CODE, DEACTIVATION_CODE)
-  validate_code('activation_code', INCORRECT_CODE)
+  validate_code('activation_code', INVALID_CODE)
 end
 
 Then(/the page should contain (.*)/) do |input|
@@ -105,13 +105,13 @@ When(/^I input the correct deactivation code$/) do
 end
 
 When(/^I input an incorrect deactivation code$/) do
-  validate_code('deactivation_code', INCORRECT_CODE)
+  validate_code('deactivation_code', INVALID_CODE)
 end
 
 When(/^I input an incorrect deactivation code max times$/) do
-  validate_code('deactivation_code', INCORRECT_CODE)
-  validate_code('deactivation_code', INCORRECT_CODE)
-  validate_code('deactivation_code', INCORRECT_CODE)
+  validate_code('deactivation_code', INVALID_CODE)
+  validate_code('deactivation_code', INVALID_CODE)
+  validate_code('deactivation_code', INVALID_CODE)
 end
 
 Then(/^I should be directed to the explosion page$/) do
