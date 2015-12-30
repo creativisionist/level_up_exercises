@@ -88,7 +88,7 @@ def create_bomb(activation_code, deactivation_code, max_failed_deactivations)
 end
 
 def numeric?(code)
-  (/[^[:digit:]]+/).match(code).to_s.empty?
+  !! /^\d+$/.match(code)
 end
 
 def empty?(code)
