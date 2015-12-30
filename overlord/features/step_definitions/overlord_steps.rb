@@ -104,11 +104,11 @@ When(/^I input the correct deactivation code$/) do
   validate_code('deactivation_code', DEACTIVATION_CODE)
 end
 
-When(/^I input the incorrect deactivation code$/) do
+When(/^I input an incorrect deactivation code$/) do
   validate_code('deactivation_code', INCORRECT_CODE)
 end
 
-When(/^I input the incorrect deactivation code max times$/) do
+When(/^I input an incorrect deactivation code max times$/) do
   validate_code('deactivation_code', INCORRECT_CODE)
   validate_code('deactivation_code', INCORRECT_CODE)
   validate_code('deactivation_code', INCORRECT_CODE)

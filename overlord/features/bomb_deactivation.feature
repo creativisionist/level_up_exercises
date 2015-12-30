@@ -15,11 +15,11 @@ Feature: Bomb deactivation
 
   Scenario: Unsuccessful bomb deactivation
     Given I have successfully activated the bomb
-    When I input the incorrect deactivation code
+    When I input an incorrect deactivation code
     Then I should be directed to the active bomb page
     And the page should contain The Bomb Is Still Active!
 
   Scenario: Unsuccessful deactivation leading to explosion
     Given I have successfully activated the bomb
-    When I input the incorrect deactivation code max times
+    When I input an incorrect deactivation code max times
     Then I should be directed to the explosion page
