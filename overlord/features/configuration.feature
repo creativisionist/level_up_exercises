@@ -28,7 +28,7 @@ Feature: Code configurations
   Scenario: Set valid activation and deactivation codes
     Given I am on the bomb page
     When I set valid activation and deactivation codes
-    Then I should be directed to the inactive_bomb page
+    Then I should be directed to the inactive bomb page
 
   Scenario: Set an invalid activation code with a valid deactivation code
     Given I am on the bomb page

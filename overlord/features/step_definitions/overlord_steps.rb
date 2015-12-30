@@ -48,12 +48,12 @@ When(/^I set blank activation or deactivation codes$/) do
   initialize_bomb(BLANK_CODE, BLANK_CODE)
 end
 
-Then(/^I should be directed to the inactive_bomb page$/) do
+Then(/^I should be directed to the inactive bomb page$/) do
   @inactive_bomb_page = InactiveBombPage.new
   expect(@inactive_bomb_page).to be_displayed
 end
 
-When(/^I am on the inactive_bomb page$/) do
+When(/^I am on the inactive bomb page$/) do
   @inactive_bomb_page = InactiveBombPage.new
   @inactive_bomb_page.load
 end
@@ -69,12 +69,12 @@ When(/^I input the correct activation code$/) do
   validate_code('activation_code', ACTIVATION_CODE)
 end
 
-Then(/^I should be directed to the active_bomb page$/) do
+Then(/^I should be directed to the active bomb page$/) do
   @active_bomb_page = ActiveBombPage.new
   expect(@active_bomb_page).to be_displayed
 end
 
-When(/^I am on the active_bomb page$/) do
+When(/^I am on the active bomb page$/) do
   @active_bomb_page = ActiveBombPage.new
   @active_bomb_page.load
 end

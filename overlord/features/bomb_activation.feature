@@ -4,18 +4,18 @@ Feature: Bomb activation
   I want to activate the bomb
 
   Scenario: Visit the inactive bomb page
-    When I am on the inactive_bomb page
+    When I am on the inactive bomb page
     Then I should see instructions and the form to submit the activation code
 
   Scenario: Successful bomb activation
-    Given I am on the inactive_bomb page
+    Given I am on the inactive bomb page
     When I input the correct activation code
-    Then I should be directed to the active_bomb page
+    Then I should be directed to the active bomb page
     And the page should contain Bomb Activated
 
   Scenario: Unsuccessful bomb activation
-    Given I am on the inactive_bomb page
+    Given I am on the inactive bomb page
     When I input the incorrect activation code
-    Then I should be directed to the inactive_bomb page
+    Then I should be directed to the inactive bomb page
     And the page should contain Please enter in the correct code, yo!
 
