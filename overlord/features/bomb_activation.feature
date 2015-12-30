@@ -15,7 +15,7 @@ Feature: Bomb activation
 
   Scenario: Unsuccessful bomb activation
     Given I am on the inactive bomb page
-    When I input the incorrect activation code
+    When I input an incorrect activation code
     Then I should be directed to the inactive bomb page
     And the page should contain Please enter in the correct code, yo!
 

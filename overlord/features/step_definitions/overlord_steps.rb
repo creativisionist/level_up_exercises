@@ -85,7 +85,7 @@ Then(/^I should see instructions and the form to submit the deactivation code$/)
   expect(@active_bomb_page).to have_submit_button
 end
 
-When(/^I input the incorrect activation code$/) do
+When(/^I input an incorrect activation code$/) do
   initialize_bomb(ACTIVATION_CODE, DEACTIVATION_CODE)
   validate_code('activation_code', INCORRECT_CODE)
 end
