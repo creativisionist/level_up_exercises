@@ -1,28 +1,28 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rails', '4.2.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'therubyracer', platforms: :ruby
-gem 'jquery-rails'
-gem 'sass-rails'
-gem 'sprockets-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'haml-rails'
-gem 'bootstrap-sass', '~> 3.3.5'
-gem 'bootstrap_form'
-gem 'devise'
-gem 'devise-bootstrap-views'
-gem 'faraday'
-gem 'figgy'
-gem 'httplog'
-gem 'interactor'
+gem "rails", "4.2.0"
+gem "coffee-rails", "~> 4.1.0"
+gem "therubyracer", platforms: :ruby
+gem "jquery-rails"
+gem "sass-rails"
+gem "sprockets-rails"
+gem "jbuilder", "~> 2.0"
+gem "sdoc", "~> 0.4.0", group: :doc
+gem "haml-rails"
+gem "bootstrap-sass", "~> 3.3.5"
+gem "bootstrap_form"
+gem "devise"
+gem "devise-bootstrap-views"
+gem "faraday"
+gem "figgy"
+gem "httplog"
+gem "interactor"
 
 ## Uncomment the below line to use Postgresql instead of SQLite
- gem 'pg'
+ gem "pg"
 
 
-gem 'web-console', '~> 3.0', group: :development
+gem "web-console", "~> 3.0", group: :development
 
 group :development, :test do
   gem "byebug"
