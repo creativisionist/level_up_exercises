@@ -25,6 +25,7 @@ gem "interactor"
 gem "web-console", "~> 3.0", group: :development
 
 group :development, :test do
+  gem "pry-remote"
   gem "byebug"
   gem "pry"
   gem "cucumber-rails", "~> 1.4.2", require: false
