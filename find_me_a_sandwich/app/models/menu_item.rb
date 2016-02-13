@@ -1,5 +1,6 @@
 class MenuItem < ActiveRecord::Base
   belongs_to :menu
+  has_and_belongs_to_many :users
 
   validates_presence_of :name, :menu
 
@@ -8,4 +9,5 @@ class MenuItem < ActiveRecord::Base
   end)
 
   default_scope -> { includes(:menu) }
+  scope :merchant_id, -> { Merchant.find(menu.merchant_id) }
 end
