@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :retrieve_users, only: [:index]
-  before_action :retrieve_current_user, only: [:edit, :update]
+  before_action :retrieve_current_user, only: [:edit, :update, :favorites]
 
   def update
     if @user.update(profile_params)
@@ -19,6 +19,11 @@ class UsersController < ApplicationController
       @user = current_user
     end
   end
+
+  def favorites
+    @user.menu_items
+  end
+
 
   private
 

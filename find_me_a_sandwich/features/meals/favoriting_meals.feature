@@ -7,10 +7,9 @@ Feature: Favoriting meals
     Given I have a valid account
     And I am logged in
     And I search a matching ZIP
-    And I visit a merchant page
 
   Scenario:
-    Given I see that merchant's menus
+    Given I visit a merchant page
     When I favorite a menu item
     And I visit my favorites
-    Then the item is added to my favorites
+    Then I see the item is a favorite

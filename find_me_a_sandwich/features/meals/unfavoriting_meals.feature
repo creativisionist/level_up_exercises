@@ -6,8 +6,10 @@ Feature: Unfavoriting meals
   Background:
     Given I have a valid account
     And I am logged in
+    And I search a matching ZIP
 
   Scenario:
-    When I visit a menu
-    And I unfavorite an item
-    Then the item is removed from my favorites
+    Given I visit a merchant page
+    And I favorite a menu item
+    When I unfavorite that item
+    Then I see the item is no longer a favorite
