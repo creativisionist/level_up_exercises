@@ -9,13 +9,13 @@ When(/^I visit the user directory$/) do
   visit users_path
 end
 
-Then(/^I see (public|private) users' names$/) do |scope|
+Then(/^I see (public) users' names$/) do |scope|
   @users[scope.to_sym].each do |user|
     expect(page).to have_content(user.full_name)
   end
 end
 
-Then(/^I do not see (public|private) users' names$/) do |scope|
+Then(/^I do not see (private) users' names$/) do |scope|
   @users[scope.to_sym].each do |user|
     expect(page).not_to have_content(user.full_name)
   end

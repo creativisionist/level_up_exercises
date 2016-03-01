@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :retrieve_users, only: [:index]
   before_action :retrieve_current_user, only: [:edit, :update, :favorites]
 
+  def index
+    @users = User.visible.all
+  end
+
   def update
     if @user.update(profile_params)
       flash[:notice] = "Profile updated."

@@ -1,0 +1,6 @@
+%h1= "#{@user.email}'s Favorites!"
+
+%h1= @user.menu_items.length
+- @user.menu_items.each do |item|
+  %ul
+    %li #{item.name} at #{link_to(item.menu.merchant.name,"merchants/#{item.menu.merchant.id}")}

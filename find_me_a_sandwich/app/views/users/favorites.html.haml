@@ -4,3 +4,4 @@ Favorites!<br />
 - current_user.menu_items.each do |item|
   %ul
     %li= item.name
+    %li= link_to(item.menu.merchant.name, "merchants/#{item.menu.merchant.id}")
