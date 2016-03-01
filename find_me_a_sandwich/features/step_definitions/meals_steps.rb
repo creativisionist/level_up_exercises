@@ -28,7 +28,7 @@ When(/^I favorite a menu item$/) do
 end
 
 Then(/^I see the item is a favorite$/) do
-  find('tr', text: 'Apple Fritter').has_content?('Unfavorite Me')
+  find('li', text: 'Apple Fritter').has_content?('Unfavorite Me')
 end
 
 When(/^I unfavorite that item$/) do

@@ -2,5 +2,5 @@ Favorites!<br />
 
 %h1= current_user.menu_items.length
 - current_user.menu_items.each do |item|
-  %tr
-    %th= item.name
+  %ul
+    %li= item.name

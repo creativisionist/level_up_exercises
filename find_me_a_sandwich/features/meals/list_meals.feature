@@ -5,9 +5,9 @@ Feature: List meals
 
   Background:
     Given I have a valid account
-    And I have favorited meals
     And I am logged in
 
     Scenario: Viewing meals
+      Given I have favorited meals
       When I visit my favorites
       Then I see my favorite meals
