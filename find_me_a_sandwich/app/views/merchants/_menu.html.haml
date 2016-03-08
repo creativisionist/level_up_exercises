@@ -12,9 +12,8 @@
               %tr
                 %th= item.name
                 %td= item.description
-                - if current_user.menu_items.include?(item)
+                - if current_user
                   %td.name
-                    = button_to "Unfavorite me", unfavorite_path(item: item.id), method: :delete
-                - else
+                    = button_to "Unfavorite me", unfavorite_path(item: item.id), method: :delete if current_user.menu_items.include?(item)
                   %td.name
-                    = button_to "Favorite me", favorites_path(item: item.id)
+                    = button_to "Favorite me", favorites_path(item: item.id) if !current_user.menu_items.include?(item)
