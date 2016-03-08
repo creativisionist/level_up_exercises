@@ -7,7 +7,7 @@ module Locu
       locu_id name description location contact categories menus website_url
     )
 
-    HOST = "https://api.locu.com"
+    HOST = "http://locu-proxy.dev:8080"
     PATHS = { venue_search: "/v2/venue/search" }
 
     def initialize(api_key)
