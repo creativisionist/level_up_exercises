@@ -11,7 +11,7 @@ describe Locu::Client do
 
   describe "#search_venues" do
     let(:url) { "#{described_class::HOST}/v2/venue/search" }
-    let(:params) { { location: { zip: "60604" } } }
+    let(:params) { { venue_query: { location: { zip: "60604" } } } }
     let(:response) { { success: true }.to_json }
     subject(:search) { client.search_venues(params) }
 

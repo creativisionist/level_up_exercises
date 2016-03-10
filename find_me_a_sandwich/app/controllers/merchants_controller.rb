@@ -1,5 +1,5 @@
 class MerchantsController < ApplicationController
-  before_action :retrieve_location
+  before_action :retrieve_location, :retrieve_menus
   before_action :retrieve_merchants, only: [:index]
   before_action :retrieve_merchant, only: [:show]
 
@@ -15,7 +15,11 @@ class MerchantsController < ApplicationController
   end
 
   def search_params
-    params.permit(:location)
+    params.permit(:location, :menus)
+  end
+
+  def retrieve_menus
+    @menus = search_params[:menus]
   end
 
   def retrieve_location
@@ -30,7 +34,8 @@ class MerchantsController < ApplicationController
 
     @merchants = Rails.cache.fetch(cache_name, expires_in: cache_expires) do
       result = SearchLocuVenues.call(client: locu_client,
-                                     postal_code: @location)
+                                     postal_code: @location,
+                                     menu_item_queries: @menus)
       result.merchants
     end
   end

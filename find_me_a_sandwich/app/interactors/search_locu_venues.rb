@@ -86,9 +86,14 @@ class SearchLocuVenues
 
   def search_params
     {
-      categories: "food",
-      location: { postal_code: context.postal_code },
-      menus: { "$present" => true },
+      venue_query: {
+        location: {
+          postal_code: context.postal_code
+        }
+      },
+      menu_item_query: {
+        name: context.menu_item_queries
+      }
     }
   end
 end

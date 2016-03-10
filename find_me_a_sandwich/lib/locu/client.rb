@@ -15,10 +15,10 @@ module Locu
       @client = Faraday.new(HOST)
     end
 
-    def search_venues(venue_params = {})
+    def search_venues(params = {})
       params = default_params.merge(fields: FIELDS,
-                                    venue_queries: [venue_params])
-
+                                    venue_queries: [params[:venue_query]],
+                                    menu_item_queries: [params[:menu_item_query]])
       post_json(PATHS[:venue_search], params)
     end
 

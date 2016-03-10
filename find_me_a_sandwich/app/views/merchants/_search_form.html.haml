@@ -4,4 +4,6 @@
       .col-md-10
         .form-group
           = search_field_tag :location, @location, class: "form-control input-lg", placeholder: "Search by ZIP"
-      %button.col-md-2.btn.btn-primary.btn-lg{ type: :submit } Search
+        .form-group
+          = search_field_tag :menus, @menus, class: "form-control input-lg", placeholder: "Search by Menu Item"
+        %button.col-md-2.btn.btn-primary.btn-lg{ type: :submit } Search
