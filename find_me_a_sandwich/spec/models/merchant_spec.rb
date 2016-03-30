@@ -1,4 +1,4 @@
-require "rails_helper"
+require "support/rails_helper"
 
 describe Merchant do
   subject(:merchant) { FactoryGirl.build(:merchant) }

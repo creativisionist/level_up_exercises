@@ -1,4 +1,4 @@
-require "rails_helper"
+require "support/rails_helper"
 
 describe MenuItem, type: :model do
   let(:item) { FactoryGirl.build(:menu_item) }

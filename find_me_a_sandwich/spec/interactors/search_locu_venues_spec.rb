@@ -1,4 +1,4 @@
-require "rails_helper"
+require "support/rails_helper"
 
 describe SearchLocuVenues, type: :interactor do
   let(:postal_code) { "60604" }

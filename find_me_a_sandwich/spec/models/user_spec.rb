@@ -1,4 +1,4 @@
-require "rails_helper"
+require "support/rails_helper"
 
 describe User, type: :model do
   let(:user) { FactoryGirl.build(:user) }

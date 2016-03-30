@@ -12,8 +12,8 @@ end
 require "rails/all"
 require "webmock/rspec"
 require "database_cleaner"
-require "spec_helper"
-require File.expand_path("../../config/environment", __FILE__)
+require "support/spec_helper"
+require File.expand_path("../../../config/environment", __FILE__)
 require "rspec/rails"
 ActiveRecord::Migration.maintain_test_schema!
 

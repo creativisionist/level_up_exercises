@@ -1,4 +1,4 @@
-require "rails_helper"
+require "support/rails_helper"
 require "json"
 
 describe Locu::Client do

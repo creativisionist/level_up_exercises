@@ -1,4 +1,4 @@
-require "rails_helper"
+require "support/rails_helper"
 
 describe Location, type: :model do
   let(:location) { FactoryGirl.build(:location) }
